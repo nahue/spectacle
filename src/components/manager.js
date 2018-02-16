@@ -69,6 +69,7 @@ export class Manager extends Component {
     progress: 'pacman',
     controls: true,
     globalStyles: true,
+    keyboardEnabled: true
   };
 
   static propTypes = {
@@ -85,6 +86,7 @@ export class Manager extends Component {
     route: PropTypes.object,
     transition: PropTypes.array,
     transitionDuration: PropTypes.number,
+    keyboardEnabled: PropTypes.bool
   };
 
   static contextTypes = {
@@ -141,7 +143,9 @@ export class Manager extends Component {
     this.setState({
       lastSlideIndex: slideIndex,
     });
-    this._attachEvents();
+    if (this.props.keyboardEnabled) {
+      this._attachEvents();
+    }
     if (this.props.autoplay) {
       this._startAutoplay();
     }
