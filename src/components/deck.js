@@ -23,6 +23,7 @@ export default class Deck extends Component {
     theme: PropTypes.object,
     transition: PropTypes.array,
     transitionDuration: PropTypes.number,
+    keyboardEnabled: PropTypes.bool
   };
 
   render() {
